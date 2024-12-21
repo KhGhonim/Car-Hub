@@ -110,11 +110,7 @@ export default function page() {
                             width={350}
                             height={200}
                             quality={100}
-                            src={
-                              carId.image.startsWith("/")
-                                ? carId.image
-                                : `/CarModels/${carId.image}`
-                            }
+                            src={`/public/CarModels/${carId.image}`}
                             alt={carId?.name}
                             className="w-full h-full md:h-56 object-cover rounded-t-xl"
                           />

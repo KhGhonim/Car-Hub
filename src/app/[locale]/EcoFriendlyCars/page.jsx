@@ -121,9 +121,7 @@ export default function page() {
                       className="card shadow-lg rounded-lg overflow-hidden bg-white"
                     >
                       <Image
-                        src={
-                           `/CarModels/${car.image}`
-                        }
+                        src={`/public/CarModels/${car.image}`}
                         width={350}
                         height={200}
                         quality={100}
@@ -173,7 +171,7 @@ export default function page() {
                       className="card shadow-lg rounded-lg overflow-hidden bg-white"
                     >
                       <Image
-                        src={`/CarModels/${car.image}`}
+                        src={`/public/CarModels/${car.image}`}
                         width={350}
                         height={200}
                         quality={100}
