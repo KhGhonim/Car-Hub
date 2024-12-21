@@ -122,9 +122,7 @@ export default function page() {
                     >
                       <Image
                         src={
-                          car.image.startsWith("/")
-                            ? car.image
-                            : `/CarModels/${car.image}`
+                           `/CarModels/${car.image}`
                         }
                         width={350}
                         height={200}
@@ -175,11 +173,7 @@ export default function page() {
                       className="card shadow-lg rounded-lg overflow-hidden bg-white"
                     >
                       <Image
-                        src={
-                          car.image.startsWith("/")
-                            ? car.image
-                            : `/CarModels/${car.image}`
-                        }
+                        src={`/CarModels/${car.image}`}
                         width={350}
                         height={200}
                         quality={100}
