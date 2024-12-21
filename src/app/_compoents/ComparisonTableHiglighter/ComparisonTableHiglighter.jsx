@@ -7,7 +7,7 @@ export default function ComparisonTableHiglighter({ selectedCars, }) {
     <section className="mb-12">
       <h2 className="text-2xl font-bold mb-4">{t("featureHighlights")}</h2>
       {selectedCars.length > 0 ? (
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {selectedCars.map((carId, i) => {
             return (
               <div

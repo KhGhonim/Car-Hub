@@ -12,9 +12,7 @@ import useFetchCarsData from "hooks/FetchData";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-
 export default function page() {
-  
   const { data, loading } = useFetchCarsData();
   const [selectedCars, setSelectedCars] = useState([]);
   const dispatch = useDispatch();
@@ -70,13 +68,21 @@ export default function page() {
               onChange={(e) => handleCarSelect(e.target.value)}
               defaultValue={""}
             >
-              <option className="text-xs md:text-sm lg:text-base" disabled value="">
-                 {t("chooseACar")}
+              <option
+                className="text-xs md:text-sm lg:text-base"
+                disabled
+                value=""
+              >
+                {t("chooseACar")}
               </option>
               {data.map((car, index) => {
                 if (!car) return null;
                 return (
-                  <option className="text-xs md:text-sm lg:text-base" key={index} value={`${car.id}`}>
+                  <option
+                    className="text-xs md:text-sm lg:text-base"
+                    key={index}
+                    value={`${car.id}`}
+                  >
                     {car.name}
                   </option>
                 );
@@ -105,6 +111,8 @@ export default function page() {
                             height={200}
                             quality={100}
                             src={carId?.image}
+                            placeholder="blur"
+                            blurDataURL={carId?.image}
                             alt={carId?.name}
                             className="w-full h-full md:h-56 object-cover rounded-t-xl"
                           />
@@ -121,20 +129,19 @@ export default function page() {
                         {/* Price */}
                         <p className="text-3xl font-bold text-gray-800 mb-4">
                           ${carId?.rent}
-                          <span className="text-base text-gray-500">
-                          </span>
+                          <span className="text-base text-gray-500"></span>
                         </p>
 
                         {/* Features */}
                         <ul className="space-y-2 text-gray-700 text-sm">
                           <li>
-                            <strong>{t("fuelUsage75L100km")}</strong> 
+                            <strong>{t("fuelUsage75L100km")}</strong>
                           </li>
                           <li>
                             <strong>{t("acceleration35sec")}</strong>
                           </li>
                           <li>
-                            <strong>{t("range300miles")}</strong> 
+                            <strong>{t("range300miles")}</strong>
                           </li>
                         </ul>
 
@@ -154,7 +161,9 @@ export default function page() {
                   })}
               </div>
             ) : (
-                <div className="text-red-500">{t("pleaseSelectAtLeastTwoCars")}</div>
+              <div className="text-red-500">
+                {t("pleaseSelectAtLeastTwoCars")}
+              </div>
             )}
           </section>
 

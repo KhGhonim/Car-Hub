@@ -24,7 +24,6 @@ export default async function middleware(req) {
   return response;
 }
 
-
 export const config = {
   matcher: [
     // Match all pathnames except for

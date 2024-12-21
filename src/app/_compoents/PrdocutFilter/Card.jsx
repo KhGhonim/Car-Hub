@@ -27,6 +27,8 @@ export default function Card({
             src={image}
             className="object-cover w-full h-48"
             width={350}
+            placeholder="blur"
+            blurDataURL={image}
             height={200}
             priority
             quality={100}

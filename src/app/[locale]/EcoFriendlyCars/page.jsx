@@ -110,56 +110,52 @@ export default function page() {
           </div>
 
           {/* Electric Cars */}
-          {loading ? (
-            <div className="flex w-full h-full items-center justify-center">
-              <FaSpinner className="animate-spin" />
-            </div>
-          ) : (
-            selectedTab === "electric" && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-                {data
-                  .filter((car) => car.electric === true)
-                  .map((car) => {
-                    console.log(car);
-                    return (
-                      <div
-                        key={car.id}
-                        className="card shadow-lg rounded-lg overflow-hidden bg-white"
-                      >
-                        <Image
-                          src={`${car.image}`}
-                          width={350}
-                          height={200}
-                          quality={100}
-                          alt={car.name}
-                          className="w-full h-44 object-cover"
-                        />
-                        <div className="p-6">
-                          <h3 className="text-xl font-semibold">{car.name}</h3>
-                          <p className="text-lg font-bold text-green-600">
-                            ${car.rent}
-                          </p>
-                          <div className="space-y-2 mt-4">
-                            <div className="flex justify-between">
-                              <span>{t("range")}</span>
-                              <span>{t(car.range)}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span>{t("chargingTime")}</span>
-                              <span>{t(car.handling)}</span>
-                            </div>
+          {selectedTab === "electric" && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
+              {data
+                .filter((car) => car.electric === true)
+                .map((car) => {
+                  console.log(car);
+                  return (
+                    <div
+                      key={car.id}
+                      className="card shadow-lg rounded-lg overflow-hidden bg-white"
+                    >
+                      <Image
+                        src={`${car.image}`}
+                        width={350}
+                        height={200}
+                        quality={100}
+                        placeholder="blur"
+                        blurDataURL={car?.image}
+                        alt={car.name}
+                        className="w-full h-44 object-cover"
+                      />
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold">{car.name}</h3>
+                        <p className="text-lg font-bold text-green-600">
+                          ${car.rent}
+                        </p>
+                        <div className="space-y-2 mt-4">
+                          <div className="flex justify-between">
+                            <span>{t("range")}</span>
+                            <span>{t(car.range)}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span>{t("chargingTime")}</span>
+                            <span>{t(car.handling)}</span>
                           </div>
                         </div>
-                        <div className="px-6 pb-6">
-                          <button className="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
-                            {t("learnMore")}
-                          </button>
-                        </div>
                       </div>
-                    );
-                  })}
-              </div>
-            )
+                      <div className="px-6 pb-6">
+                        <button className="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+                          {t("learnMore")}
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
           )}
 
           {/* Hybrid Cars */}
@@ -181,9 +177,10 @@ export default function page() {
                         src={`${car.image}`}
                         width={350}
                         height={200}
+                        placeholder="blur"
+                        blurDataURL={car?.image}
                         quality={100}
                         alt={car.name}
-                        loading="lazy"
                         className="w-full h-44 object-cover"
                       />
                       <div className="p-6">
