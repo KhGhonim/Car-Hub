@@ -110,9 +110,11 @@ export default function page() {
                             width={350}
                             height={200}
                             quality={100}
-                            src={`/CarModels/${carId?.image}`}
-                            placeholder="blur"
-                            blurDataURL={`/CarModels/${carId?.image}`}
+                            src={
+                              carId.image.startsWith("/")
+                                ? carId.image
+                                : `/CarModels/${carId.image}`
+                            }
                             alt={carId?.name}
                             className="w-full h-full md:h-56 object-cover rounded-t-xl"
                           />
