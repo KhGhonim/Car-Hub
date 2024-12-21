@@ -65,7 +65,7 @@ export default function ProductFilterHeader() {
           fuel={car.fuel}
           rent={car.rent}
           key={car.name}
-          image={car.image}
+          image={`/CarModels/${car.image}`}
           id={car.id}
         />
       );
