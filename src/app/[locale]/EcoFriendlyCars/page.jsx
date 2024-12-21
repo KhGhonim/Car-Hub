@@ -121,13 +121,8 @@ export default function page() {
                       key={car.id}
                       className="card shadow-lg rounded-lg overflow-hidden bg-white"
                     >
-                      <Image
+                      <img
                         src={`${car.image}`}
-                        width={350}
-                        height={200}
-                        quality={100}
-                        placeholder="blur"
-                        blurDataURL={car?.image}
                         alt={car.name}
                         className="w-full h-44 object-cover"
                       />
@@ -173,13 +168,8 @@ export default function page() {
                       key={car.id}
                       className="card shadow-lg rounded-lg overflow-hidden bg-white"
                     >
-                      <Image
+                      <img
                         src={`${car.image}`}
-                        width={350}
-                        height={200}
-                        placeholder="blur"
-                        blurDataURL={car?.image}
-                        quality={100}
                         alt={car.name}
                         className="w-full h-44 object-cover"
                       />
